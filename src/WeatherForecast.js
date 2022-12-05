@@ -4,6 +4,7 @@ import axios from "axios";
 import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WeatherForecast(props) {
+  console.log(props);
   const [loaded, setLoaded] = useState(false);
   const [forecast, setForecast] = useState(null);
 
@@ -28,11 +29,11 @@ export default function WeatherForecast(props) {
       </div>
     );
   } else {
-    const apiKey = "fbef01f4et1b02o0d25c27210a43ef3f";
-    let lon = props.coordinates.lon;
-    let lat = props.coordinates.lat;
+    const apiKey = "bd79ao40tde3dec118ca46bc3e6dd55f";
+    let lon = props.coordinates.longitude;
+    let lat = props.coordinates.latitude;
     let apiUrl = `http://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
-
+    console.log(apiUrl);
     axios.get(apiUrl).then(handleResponse);
 
     return null;
