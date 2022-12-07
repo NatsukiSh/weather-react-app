@@ -1,5 +1,4 @@
 import React from "react";
-import ReactAnimatedWeather from "react-animated-weather";
 
 export default function WeatherIcon(props) {
   const codeMapping = {
@@ -24,11 +23,12 @@ export default function WeatherIcon(props) {
   };
 
   return (
-    <ReactAnimatedWeather
-      icon={codeMapping[props.code]}
-      color="#9AA0A6"
-      size={props.size}
-      animate={true}
+    <img
+      src={
+        codeMapping[
+          `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${props.code}.png`
+        ]
+      }
     />
   );
 }
