@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function WeatherIcon(props) {
-  const codeMapping = {
+  /*const codeMapping = {
     "01d": "CLEAR_DAY",
     "01n": "CLEAR_NIGHT",
     "02d": "PARTLY_CLOUDY_DAY",
@@ -20,15 +20,12 @@ export default function WeatherIcon(props) {
     "013n": "SNOW",
     "050d": "FOG",
     "050n": "FOG",
-  };
+  };*/
 
   return (
     <img
-      src={
-        codeMapping[
-          `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${props.code}.png`
-        ]
-      }
+      alt="icon"
+      src={`http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${props.code}.png`}
     />
   );
 }
